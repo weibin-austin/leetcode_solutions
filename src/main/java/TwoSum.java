@@ -55,4 +55,13 @@ public class TwoSum {
         }
         return null;
     }
+
+    /*
+      Idea:
+      Firstly I would like to create a hashmap to store the array value and each value's index.
+      I will interate all values in the array, and store the value and index insisde hashmap.
+      Everytime I iterate it, I need to compare whether the target value - this time is inside the map or not,
+      if we find it, then return the two indexs in a result array, otherwise, put the value and index inside the map.
+      Then continue iterating.
+     */
 }
