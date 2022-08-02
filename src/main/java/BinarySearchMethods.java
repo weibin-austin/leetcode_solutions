@@ -15,11 +15,14 @@ import java.util.Arrays;
  */
 public class BinarySearchMethods {
     public static void main(String[] args) {
-//        int[] nums = new int[]{1,2,3,4,5,6,8,9,11,13,15};
-        int[] nums = new int[]{1,2};
-        int res = binarySearch1(nums, 2);
-        System.out.println(res);
+        int[] nums1 = new int[]{1,2,3,4,5,6,8,9,11,13,15};
+        int[] nums2 = new int[]{1,2};
+        int res1 = binarySearch1(nums1, 11);
+        int res2 = binarySearch2(nums2, 2);
+        System.out.println(res1);
+        System.out.println(res2);
     }
+
     private static int binarySearch1( int[] nums, int target) {
         if(nums == null || nums.length == 0) {
             return -1;
@@ -92,6 +95,29 @@ public class BinarySearchMethods {
         // if (nums[right] == target) return right;
      these two expression are same, we only need one because when the while loop condition violated, left = right.
      We only need to check one of them will be good.
+     */
 
+    private static int binarySearch2(int[] nums, int target) {
+        if (nums == null || nums.length == 0) return -1;
+
+        int left = 0, right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+    /*
+        Same idea, same structure, only difference is the while loop condition.
+            // while(left < = right)
+        In this condition, we don't need to add edge check after while loop.
+        Because when left = right -> left + (right -left) / 2 = left or right.
      */
 }
