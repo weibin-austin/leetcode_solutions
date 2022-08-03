@@ -23,6 +23,60 @@ public class BinarySearchMethods {
         System.out.println(res2);
     }
 
+    /**
+     *  target = 13
+     *  nums = [1,   2,   3,   4,   5,   7,   8,   10,   13,   16]
+     *          L                                         T     R              L = 0, R = nums.length - 1 = 9
+     *
+     *
+     *
+     *  nums = [1,   2,   3,   4,   5,   7,   8,   10,   13,   16]             int mid = L + (R - L)/2 = (0 + 9)/2 = 4
+     *          L                   mid                         R              nums[mid] = 5 < 13 = target
+     *                                                                         L = mid + 1 = 4 + 1 = 5
+     *
+     *
+     *  nums = [1,   2,   3,   4,   5,   7,   8,   10,   13,   16]
+     *                                   L   mid                R               R = 9
+     *                                                                          mid = (4 + 9) / 2 = 6
+     *                                                                          nums[mid] = nums[6] = 8 < 13 = target
+     *                                                                          L = mid + 1 = 6 + 1 = 7
+     *
+     *
+     *  nums = [1,   2,   3,   4,   5,   7,   8,   10,   13,   16]
+     *                                              L    mid    R               R = 9
+     *                                                                          mid = (7 + 9) / 2 = 8
+     *                                                                          nums[mid] = nums[8] = 13 = 13 = target -> return
+     *
+     *
+     *  Special
+     *  target =  1
+     *  nums[1   ,   2]
+     *       L       R         L = 0, R = 1 -> mid = (L + R) / 2 = 0
+     *       mid               nums[mid] = nums[0] = 1 = target -> return 0
+     *
+     *
+     *
+     *  target = 2
+     *  nums[1   ,   2]        L = 0, R = 1 -> mid = (L + R) / 2 = 0
+     *       L       R         nums[mid] = nums[0] = 1 < 2 = target
+     *       mid               L = mid + 1 = 0 + 1 = 1 -> (L < R) violate -> L = R = 1 -> if (nums[L] == target or nums[R] == target)
+     *
+     *
+     *  For binarySearch, if we use the way as
+     *      // while(left < right)
+     *      // if(nums[mid] < target) left = mid + 1
+     *      // if(nums[mid] > target) right = mid - 1
+     *      // if(nums[mid] == target) return mid
+     *  When the while loop condition violated, we need to check one of below
+     *     // if (nums[left] == target) return start;
+     *     // if (nums[right] == target) return right;
+     *  these two expression are same, we only need one because when the while loop condition violated, left = right.
+     *  We only need to check one of them will be good.
+     *
+     * @param nums Represent input Array
+     * @param target The value is what we are looking for the position in the array.
+     * @return Return the index of target value in array.
+     */
     private static int binarySearch1( int[] nums, int target) {
         if(nums == null || nums.length == 0) {
             return -1;
@@ -46,57 +100,19 @@ public class BinarySearchMethods {
         return -1;
     }
 
-    /*
-     target = 13
-     nums = [1,   2,   3,   4,   5,   7,   8,   10,   13,   16]
-             L                                         T     R              L = 0, R = nums.length - 1 = 9
 
-
-
-     nums = [1,   2,   3,   4,   5,   7,   8,   10,   13,   16]             int mid = L + (R - L)/2 = (0 + 9)/2 = 4
-             L                   mid                         R              nums[mid] = 5 < 13 = target
-                                                                            L = mid + 1 = 4 + 1 = 5
-
-
-     nums = [1,   2,   3,   4,   5,   7,   8,   10,   13,   16]
-                                      L   mid                R               R = 9
-                                                                             mid = (4 + 9) / 2 = 6
-                                                                             nums[mid] = nums[6] = 8 < 13 = target
-                                                                             L = mid + 1 = 6 + 1 = 7
-
-
-     nums = [1,   2,   3,   4,   5,   7,   8,   10,   13,   16]
-                                                 L    mid    R               R = 9
-                                                                             mid = (7 + 9) / 2 = 8
-                                                                             nums[mid] = nums[8] = 13 = 13 = target -> return
-
-
-     Special
-     target =  1
-     nums[1   ,   2]
-          L       R         L = 0, R = 1 -> mid = (L + R) / 2 = 0
-          mid               nums[mid] = nums[0] = 1 = target -> return 0
-
-
-
-     target = 2
-     nums[1   ,   2]        L = 0, R = 1 -> mid = (L + R) / 2 = 0
-          L       R         nums[mid] = nums[0] = 1 < 2 = target
-          mid               L = mid + 1 = 0 + 1 = 1 -> (L < R) violate -> L = R = 1 -> if (nums[L] == target or nums[R] == target)
-
-
-     For binarySearch, if we use the way as
-         // while(left < right)
-         // if(nums[mid] < target) left = mid + 1
-         // if(nums[mid] > target) right = mid - 1
-         // if(nums[mid] == target) return mid
-     When the while loop condition violated, we need to check one of below
-        // if (nums[left] == target) return start;
-        // if (nums[right] == target) return right;
-     these two expression are same, we only need one because when the while loop condition violated, left = right.
-     We only need to check one of them will be good.
+    /**
+     *
+     *    Same idea, same structure, only difference is the while loop condition.
+     *        // while(left < = right)
+     *    In this condition, we don't need to add edge check after while loop.
+     *    Because when left = right -> left + (right -left) / 2 = left or right.
+     *
+     *
+     * @param nums: Represent input Array
+     * @param target: The value is what we are looking for the position in the array.
+     * @return: Return the index of target value in array.
      */
-
     private static int binarySearch2(int[] nums, int target) {
         if (nums == null || nums.length == 0) return -1;
 
@@ -114,10 +130,20 @@ public class BinarySearchMethods {
         }
         return -1;
     }
-    /*
-        Same idea, same structure, only difference is the while loop condition.
-            // while(left < = right)
-        In this condition, we don't need to add edge check after while loop.
-        Because when left = right -> left + (right -left) / 2 = left or right.
+
+    /**
+     *
+     * @param nums: Represent input Array
+     * @param target: The value is what we are looking for the position in the array.
+     * @param start: start index to do the binary search
+     * @param end: end index when finish the binary search
+     * @return: the index of target in Array
      */
+    private static int binarySearch3(int[] nums, int target, int start, int end) {
+        if(start > end) return -1;
+        int mid = (start + end) / 2;
+        if(nums[mid] > target) return binarySearch3(nums, target, start, mid - 1);
+        if(nums[mid] < target) return binarySearch3(nums, target, mid + 1, end);
+        return mid;
+    }
 }
