@@ -1,3 +1,5 @@
+package LeetcodeSolutions;
+
 /**
  * @author Weibin Sun
  * @create 8/1/22 12:28 AM
