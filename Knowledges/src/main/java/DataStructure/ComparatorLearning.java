@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ *  Comparator 一般是针对reference data type 的比较
+ *  1. (a, b) -> a[0] - b[0]
+ *  2. (a, b) -> Integer.compare(a[0], b[0])
+ *  3. Comparator.comparingInt(o -> o[0])
+ */
 public class ComparatorLearning {
     //Comparator1
     public static Comparator<Student> comp1 = (o1, o2) -> {
