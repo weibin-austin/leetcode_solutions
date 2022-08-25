@@ -1,5 +1,10 @@
 package AntraOA.eBay;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
 public class NoStrictlyIncreasingSequence {
     public static void main(String[] args) {
         System.out.println(check(new int[]{1,2,5,1,6,7}, 6));
@@ -18,6 +23,12 @@ public class NoStrictlyIncreasingSequence {
                 }
             }
         }
+
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+        for(int i = 0; i < list.size(); i++) {
+        }
+
         // 此处以下说明只删掉了一次 i
         boolean res = false;
         if(pointer == -1 || pointer == 0 ) { // pointer = 0 删掉左边大的， pointer = arr.length - 2 时需满足第二个条件
