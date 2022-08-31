@@ -45,5 +45,16 @@ public class MapLearning {
         System.out.println("通过Map.values()遍历所有的value，但不能遍历key");
         for (String v : map.values()) {
             System.out.println("value= " + v);
-        }    }
+        }
+
+        System.out.println(map.getOrDefault("key1", "value0")); // return value1
+        System.out.println(map.getOrDefault("key0", "value0")); // return value0
+
+        String s = "ababsdafg";
+        Map<Character, Integer> map1 = new HashMap<>();
+        for (char c: s.toCharArray()) {
+            map1.put(c, map1.getOrDefault(c, 0) + 1); // map.put(key, map.getOrDefault(key, defaultValue) + 1)
+        }
+        System.out.println(map1.toString());
+    }
 }
