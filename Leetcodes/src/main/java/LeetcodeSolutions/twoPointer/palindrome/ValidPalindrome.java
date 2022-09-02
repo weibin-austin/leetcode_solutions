@@ -1,4 +1,4 @@
-package LeetcodeSolutions.twoPointer;
+package LeetcodeSolutions.twoPointer.palindrome;
 
 public class ValidPalindrome {
     /**

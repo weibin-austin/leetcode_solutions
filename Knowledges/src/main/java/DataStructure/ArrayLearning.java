@@ -71,6 +71,15 @@ public class ArrayLearning {
             System.out.println(Arrays.toString(interval));
         }
 
+        // 对于List的地址输出可以直接输出List中的每个元素
+
+        // 对于array的地址输输出的是array在heap中的地址
+        // Arrays.toString(a), Arrays类的静态方法 Arrays.toString(a) 可以输出array中的每一个元素
+        int[] a = new int[]{1, 2, 3};
+        System.out.println(a);                  // [I@5caf905d
+        System.out.println(a.toString());       // [I@5caf905d
+        System.out.println(Arrays.toString(a)); // [1, 2, 3]: Returns a string representation of the contents of the specified array.
+
 
     }
 }

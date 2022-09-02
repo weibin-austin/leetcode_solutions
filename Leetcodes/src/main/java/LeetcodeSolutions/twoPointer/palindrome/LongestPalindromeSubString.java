@@ -1,4 +1,4 @@
-package LeetcodeSolutions.twoPointer;
+package LeetcodeSolutions.twoPointer.palindrome;
 
 /**
  *    Given a string s, return the longest palindromic substring in s.

@@ -1,4 +1,4 @@
-package LeetcodeSolutions;
+package LeetcodeSolutions.twoPointer.binarysearch;
 
 import org.junit.jupiter.api.Test;
 

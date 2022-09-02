@@ -1,4 +1,4 @@
-package LeetcodeSolutions;
+package LeetcodeSolutions.twoPointer.binarysearch;
 
 /**
  * @author Weibin Sun
