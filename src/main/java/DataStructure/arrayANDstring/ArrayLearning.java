@@ -81,5 +81,9 @@ public class ArrayLearning {
         System.out.println(Arrays.toString(a)); // [1, 2, 3]: Returns a string representation of the contents of the specified array.
 
 
+         int[] array0 = new int[]{1,2,3,4,5,6,7,8,9};
+         int[] dummy = array0.clone();
+        System.out.println(dummy.toString()); // [I@3a71f4dd
+        System.out.println(array0.toString()); // [I@7adf9f5f
     }
 }

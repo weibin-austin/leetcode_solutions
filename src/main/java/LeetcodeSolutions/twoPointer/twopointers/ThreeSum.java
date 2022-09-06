@@ -15,7 +15,7 @@ public class ThreeSum {
     public static List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums); // sort之后可以利用数组的特性使用双指针
         List<List<Integer>> res = new ArrayList<>();
-        for(int i = 0; i < nums.length; i++) {
+        for(int i = 0; i < nums.length - 2; i++) {
             if(i != 0 && nums[i] == nums[i - 1]) continue; // 判断重复1，这里用if判断是因为已经在for循环内，会判断每一个扫描到的i
 
             int left = i + 1, right = nums.length - 1;
@@ -39,5 +39,34 @@ public class ThreeSum {
             }
         }
         return res;
+    }
+
+
+    public static List<List<Integer>> result = new ArrayList<>();
+
+    public static List<List<Integer>> threeSumGoodLook(int[] nums) {
+        Arrays.sort(nums);
+        for(int i = 0; i < nums.length - 2; i++) { // i只能取到 nums.length - 3,最极端的情况nums的最后三位 ：nums.length - 3, nums.length - 2, nums.length - 1
+            if(i != 0 && nums[i] == nums[i - 1]) continue;//  不要忘记跳过相同的第一个数字                 i               left              right
+            int left = i + 1, right = nums.length - 1;
+            twoSum(nums, left, right, nums[i]);
+        }
+        return result;
+    }
+
+    private static void twoSum(int[] nums, int left, int right, int target) {
+        while(left < right) {
+            int sum = nums[left] + nums[right] + target;
+            if(sum == 0) {
+                result.add(Arrays.asList(target, nums[left++], nums[right--]));
+                while(nums[left] == nums[left - 1] && left < right) left++;
+                while(nums[right] == nums[right + 1] && left < right) right--;
+             } else if(sum < 0) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
     }
 }
