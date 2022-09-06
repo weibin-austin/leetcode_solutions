@@ -1,9 +1,5 @@
 package LeetcodeSolutions.twoPointer.binarysearch;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
 /**
  * @author Weibin Sun
  * @create 8/1/22 8:30 PM
@@ -15,7 +11,7 @@ import java.util.Arrays;
  *
  * @Return: the position of the target in Array
  */
-public class BinarySearchMethods {
+public class BinarySearchMethods704 {
     public static void main(String[] args) {
         int[] nums1 = new int[]{1,2,3,4,5,6,8,9,11,13,15};
         int[] nums2 = new int[]{1,2};

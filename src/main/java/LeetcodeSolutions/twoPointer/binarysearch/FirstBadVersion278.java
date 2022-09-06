@@ -19,7 +19,7 @@ package LeetcodeSolutions.twoPointer.binarysearch;
  *
  *
  */
-public class FirstBadVersion {
+public class FirstBadVersion278 {
     public static boolean[] arr =
             {false, false, false, false, false, false, false, false, true, true, true, true, true, true, true,};
 

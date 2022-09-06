@@ -1,9 +1,11 @@
-package DataStructure.list;
+package LeetcodeSolutions.ListNode;
+
 
 /**
+ *                 HEAD
  *              _________________      _________________     _________________     _________________
  *             |           |    |     |           |    |    |           |    |    |           |    |
- *   HEAD----->|   A       |    | --->|  B        |    |--->|    C      |    |--->|     D     |    |-----> NULL
+ *             |   A       |    | --->|  B        |    |--->|    C      |    |--->|     D     |    |-----> NULL
  *             |___________|____|     |___________|____|    |___________|____|    |___________|____|
  *               Data       Next
  *
@@ -20,10 +22,3 @@ public class ListNodeLearning {
     }
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-    public ListNode(int val) {
-        this.val = val;
-    }
-}

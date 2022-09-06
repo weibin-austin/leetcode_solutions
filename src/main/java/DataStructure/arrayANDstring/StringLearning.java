@@ -33,5 +33,10 @@ public class StringLearning {
         int i = s1.compareTo(s2); //
         System.out.println(i);
 
+//        char ch = '1';
+        String sss ="123";
+//        System.out.println(Integer.valueOf(sss, 2));
+        System.out.println(Integer.valueOf(sss));
+
     }
 }

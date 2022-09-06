@@ -1,4 +1,4 @@
-package LeetcodeSolutions.twoPointer;
+package LeetcodeSolutions.twoPointer.twopointers;
 
 public class StrStr {
     /**

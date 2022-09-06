@@ -1,9 +1,6 @@
 package LeetcodeSolutions.twoPointer.binarysearch;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -15,7 +12,7 @@ import java.util.stream.Collectors;
  * |a - x| < |b - x|, or
  * |a - x| == |b - x| and a < b
  */
-public class FindKClosestElements {
+public class FindKClosestElements658 {
     public static void main(String[] args) {
         int[] arr = new int[]{1,2,3,4,5,6,7,8,9};
         System.out.println(customerComparator(arr, 4, 3));
@@ -36,14 +33,17 @@ public class FindKClosestElements {
      *     SC:
      */
     public static List<Integer> customerComparator(int[] arr, int k, int x) {
-        List<Integer> list = new ArrayList<>();
-        for(int a: arr) { // O(n)
-            list.add(a);
-        }
-        Collections.sort(list, Comparator.comparingInt(a -> Math.abs(a - x))); //O(nlogn)
-        list = list.stream().limit(k).collect(Collectors.toList()); // find the first k
-        Collections.sort(list); //O(klogk)
-        return list;
+//        return Arrays.stream(arr).mapToObj(a -> new Integer(a)).sorted(Comparator.comparingInt(a -> Math.abs(a - x))).limit(k).sorted().collect(Collectors.toList());
+        return Arrays.stream(arr).boxed().sorted(Comparator.comparingInt(a -> Math.abs(a - x))).limit(k).sorted().collect(Collectors.toList()); // boxed() -> 装箱
+//        List<Integer> list = new ArrayList<>();
+//        for(int a: arr) { // O(n)
+//            list.add(a);
+//        }
+//        Collections.sort(list, Comparator.comparingInt(a -> Math.abs(a - x))); //O(nlogn)
+//        list = list.stream().limit(k).collect(Collectors.toList()); // find the first k
+//        Collections.sort(list); //O(klogk)
+//        return list;
+//        return list.stream().limit(k).sorted().collect(Collectors.toList()); // 不需要再update list
     }
 
     /**

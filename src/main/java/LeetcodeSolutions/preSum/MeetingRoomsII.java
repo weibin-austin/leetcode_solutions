@@ -45,3 +45,34 @@ public class MeetingRoomsII {
         return res;
     }
 }
+
+/*
+class Solution {
+    public int minMeetingRoomsM1(int[][] intervals) {
+        Arrays.sort(intervals, (a,b) -> (a[0] - b[0]));
+        List<Node> list = new ArrayList<>();
+        for(int[] interval : intervals) {
+            list.add(new Node(interval[0], 1));
+            list.add(new Node(interval[1], -1));
+        }
+
+        list = list.stream().sorted((a,b) -> a.time - b.time).collect(Collectors.toList());
+        int res = 0;
+        int count = 0;
+        for(Node n : list) {
+            count += n.cost;
+            res = Math.max(res, count);
+        }
+        return res;
+    }
+}
+
+class Node{
+    int time;
+    int cost;
+    public Node(int time, int cost) {
+        this.time = time;
+        this.cost = cost;
+    }
+}
+ */

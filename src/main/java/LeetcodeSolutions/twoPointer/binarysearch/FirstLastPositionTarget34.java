@@ -22,7 +22,7 @@ import java.util.Arrays;
  * Input: nums = [], target = 0
  * Output: [-1,-1]
  */
-public class FirstLastPositionTarget {
+public class FirstLastPositionTarget34 {
     public static void main(String[] args) {
         int[] nums = new int[]{5,7,7,8,8,10};
         System.out.println(Arrays.toString(searchRange(nums, 8))); //[3,4]

@@ -1,6 +1,7 @@
 package DataStructure.java8;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -176,4 +177,27 @@ public class StreamApiLearning {
                                                                                                                         System.out.println();
 
     }
-}
+
+    @Test
+    public void leetcode658() {
+        int k = 4, x = 3;
+        int[] array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        List<Integer> collect = Arrays.stream(array).boxed().sorted(Comparator.comparingInt(a -> Math.abs(a - x))).limit(k).sorted().collect(Collectors.toList());// boxed() -> 装箱
+        List<Integer> expect = Arrays.asList(1,2,3,4);
+        for(int i = 0; i < 4; i++) {
+            Assertions.assertEquals(collect.get(i), expect.get(i));
+        }
+
+//        return Arrays.stream(arr).mapToObj(a -> new Integer(a)).sorted(Comparator.comparingInt(a -> Math.abs(a - x))).limit(k).sorted().collect(Collectors.toList());
+//        List<Integer> list = new ArrayList<>();
+//        for(int a: arr) { // O(n)
+//            list.add(a);
+//        }
+//        Collections.sort(list, Comparator.comparingInt(a -> Math.abs(a - x))); //O(nlogn)
+//        list = list.stream().limit(k).collect(Collectors.toList()); // find the first k
+//        Collections.sort(list); //O(klogk)
+//        return list;
+//        return list.stream().limit(k).sorted().collect(Collectors.toList()); // 不需要再update list
+        }
+    }
+

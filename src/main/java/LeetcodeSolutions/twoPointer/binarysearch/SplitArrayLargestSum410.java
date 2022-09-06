@@ -2,7 +2,7 @@ package LeetcodeSolutions.twoPointer.binarysearch;
 
 import java.util.Arrays;
 
-public class SplitArrayLargestSum {
+public class SplitArrayLargestSum410 {
     public static void main(String[] args) {
         int[] nums = new int[]{7,2,5,10,8};
         System.out.println(splitArray(nums, 2));
