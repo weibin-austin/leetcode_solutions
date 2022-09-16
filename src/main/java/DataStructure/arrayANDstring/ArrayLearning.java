@@ -1,5 +1,7 @@
 package DataStructure.arrayANDstring;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -85,5 +87,46 @@ public class ArrayLearning {
          int[] dummy = array0.clone();
         System.out.println(dummy.toString()); // [I@3a71f4dd
         System.out.println(array0.toString()); // [I@7adf9f5f
+    }
+
+    @Test
+    public void basic_test() {
+        int[] arr = new int[2];
+        arr[0]++;
+//        boolean res = --arr[0] == 0;
+        boolean res = arr[0]-- == 0;
+        System.out.println(res);
+        /*
+            if, for example, i = 5:
+
+            --i decrements i by 1 then gives you the value of i (4).
+
+            i-- gives you the value of i (5) then decrements it by 1.
+
+            Both will give you the same result in a for loop.
+         */
+    }
+
+    @Test
+    public void basic_test1() {
+        int[][] maze = new int[][] {{0,0,1,0,0},
+                                    {0,0,0,0,0},
+                                    {0,0,0,1,0},
+                                    {1,1,0,1,1},
+                                    {0,0,0,0,0}};
+
+        int n = maze.length,
+            m = maze[0].length;
+
+        int[][] dist = new int[n][m];
+        for(int i = 0; i < n ; i++) {
+            Arrays.fill(dist[i], 1); // dist[i] 代表一个array，将dist[i]这个array中的全部elements fill 为 1
+        }
+
+        // Arrays
+
+        for(int[] d: dist) {
+            System.out.println(Arrays.toString(d));
+        }
     }
 }

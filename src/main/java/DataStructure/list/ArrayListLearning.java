@@ -1,9 +1,6 @@
 package DataStructure.list;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class ArrayListLearning {
     public static void main(String[] args) {
@@ -79,6 +76,17 @@ public class ArrayListLearning {
 
         ArrayList<Integer> intlist = new ArrayList<Integer>(Collections.nCopies(10, 5)); // multiple same elements.
         System.out.println("ArrayList items: "+intlist); //  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+
+
+        LinkedList<Integer> list = new LinkedList<>();
+        list.addLast(1);
+        list.add(3);
+        list.add(2);
+        list.add(4);
+        Collections.reverse(list);
+//        list.set(1, 2);
+//        list.set(0, 100);
+        System.out.println(list);
 
 
     }

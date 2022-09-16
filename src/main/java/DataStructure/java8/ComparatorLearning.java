@@ -3,6 +3,7 @@ package DataStructure.java8;
 import DataStructure.java8.entity.Student;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -70,6 +71,9 @@ public class ComparatorLearning {
           Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
           Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
          */
+
+        Collections.sort(list, (a, b) -> Integer.compare(b.id, a.id));
+
 
     }
 }

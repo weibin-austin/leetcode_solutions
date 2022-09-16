@@ -1,8 +1,8 @@
 package DataStructure.map;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import org.junit.jupiter.api.Test;
+
+import java.util.*;
 
 /**
  *    Map是java中的接口，Map.Entry是Map的一个内部接口。
@@ -56,5 +56,29 @@ public class MapLearning {
             map1.put(c, map1.getOrDefault(c, 0) + 1); // map.put(key, map.getOrDefault(key, defaultValue) + 1)
         }
         System.out.println(map1.toString());
+
+
     }
+
+    @Test
+    public void basic_test() {
+        Map<String, List<String>> map = new HashMap<>();
+        List<String> x = map.getOrDefault("key1", new ArrayList<>());
+        x.add("value1");
+        x.add("value2");
+        map.put("key1", x);
+//        System.out.println(map.toString());
+
+        map.computeIfAbsent("key2", val -> new ArrayList<>()).add("value3");
+        // 如果是Value以Collection的形式存在，可以用 computeIfAbsent 对value赋值新的Collection。类似getOrDefault
+        map.get("key2").add("value4");
+        System.out.println(map.toString());
+    }
+
+    @Test
+    public void basic_test1() {
+
+    }
+
+
 }
