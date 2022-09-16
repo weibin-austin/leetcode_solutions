@@ -1,5 +1,7 @@
 package DataStructure.list;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.*;
 
 public class ArrayListLearning {
@@ -75,8 +77,8 @@ public class ArrayListLearning {
           */
 
         ArrayList<Integer> intlist = new ArrayList<Integer>(Collections.nCopies(10, 5)); // multiple same elements.
+        intlist.add(0,1000);
         System.out.println("ArrayList items: "+intlist); //  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
-
 
         LinkedList<Integer> list = new LinkedList<>();
         list.addLast(1);
@@ -89,5 +91,12 @@ public class ArrayListLearning {
         System.out.println(list);
 
 
+    }
+
+    @Test
+    public void basic_test() {
+        ArrayList<Integer> intlist = new ArrayList<Integer>(Collections.nCopies(10, 5)); // multiple same elements.
+        intlist.add(0,1000);
+        System.out.println("ArrayList items: "+intlist); //  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
     }
 }
