@@ -1,4 +1,4 @@
-package DataStructure.arrayANDstring;
+package DataStructure.CharacterLeaning;
 
 public class CharacterLearning {
     public static void main(String[] args) {

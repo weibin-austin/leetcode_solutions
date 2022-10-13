@@ -1,4 +1,4 @@
-package DataStructure.arrayANDstring;
+package DataStructure.arrayLearning;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

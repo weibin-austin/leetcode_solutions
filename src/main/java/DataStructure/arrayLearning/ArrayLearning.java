@@ -1,4 +1,4 @@
-package DataStructure.arrayANDstring;
+package DataStructure.arrayLearning;
 
 import org.junit.jupiter.api.Test;
 
@@ -128,5 +128,24 @@ public class ArrayLearning {
         for(int[] d: dist) {
             System.out.println(Arrays.toString(d));
         }
+
+
+    }
+
+    @Test
+    public void test_row_column() {
+        int[][] matrix = new int[2][5];
+        int count = 0;
+        for(int i = 0; i < matrix.length; i++)
+            for(int j = 0; j < matrix[0].length; j++)
+                matrix[i][j] = count++;
+
+        for(int[] row: matrix)
+            System.out.println(Arrays.toString(row));
+        /*      row = 2, column = 5
+                [[0, 1, 2, 3, 4],
+                 [5, 6, 7, 8, 9]]
+
+         */
     }
 }

@@ -1,4 +1,4 @@
-package DataStructure.tree;
+package DataStructure.tire;
 
 public class TrieLearning {
     public static void main(String[] args) {
