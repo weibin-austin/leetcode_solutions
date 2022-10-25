@@ -103,5 +103,10 @@ public class MapLearning {
 
     }
 
+    @Test
+    public void basic_test2() {
+//        Map<Integer, Integer> map = new Hashtable<>()
+    }
+
 
 }

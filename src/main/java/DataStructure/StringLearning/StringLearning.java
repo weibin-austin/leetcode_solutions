@@ -96,4 +96,11 @@ public class StringLearning {
         return root.val + "," + serialize(root.left) + "," + serialize(root.right);
     }
 
+    @Test
+    public void basic_test() {
+        String str = "1112";
+        int str1 = Integer.parseInt(str);
+        System.out.println(str1);
+    }
+
 }
