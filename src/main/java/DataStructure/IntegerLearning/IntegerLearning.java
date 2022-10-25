@@ -1,5 +1,7 @@
 package DataStructure.IntegerLearning;
 
+import org.junit.jupiter.api.Test;
+
 public class IntegerLearning {
     public static void main(String[] args) {
         int maxVal = Integer.MAX_VALUE; // 2147483647 = 2^31 - 1
@@ -42,5 +44,13 @@ public class IntegerLearning {
         }
 
         return res;
+    }
+
+    @Test
+    public void basic_test() {
+        // String to Integer
+        String s1 = "123";
+        Integer i1 = Integer.parseInt(s1);
+        System.out.println(i1);
     }
 }
